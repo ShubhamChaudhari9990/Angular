@@ -1,0 +1,18 @@
+<div class="div">
+    <h1>String Interpolation <u>{{d | date:'hh:mm:ss'}}</u></h1>
+
+    <hr style="border: 4px solid red;">
+    <h1>Event Binding</h1>
+    <button (click)=showData()>click me alert</button>
+    <hr style="border: 4px solid red;">
+
+    <h1>Property binding</h1>
+    <input type="text" value="name">
+    <hr style="border: 4px solid red;">
+
+    <h1>Two-Way DataBindig</h1>
+    <input type="text" [(ngModel)]="uname">
+    {{uname | uppercase}}
+
+
+</div>

@@ -1,0 +1,22 @@
+/* Structure */
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+.flex{
+    margin: 30px;
+}
+/* .mat-column-position{
+    border: 1px solid;
+} */
+th{
+    border: 1px solid;
+}
+.button{
+    margin: 20px;
+}
+  

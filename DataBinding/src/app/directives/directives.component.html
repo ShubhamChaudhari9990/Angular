@@ -1,0 +1,52 @@
+<h1> *ngIf example </h1>
+<div *ngIf="true">
+    <h1>Display data</h1>
+</div>
+<hr>
+<h1> *ngIfElse example </h1>
+<div *ngIf="isLogin; else isLogout">
+    <h1>You are LogIn...!</h1>
+</div>
+<ng-template #isLogout>
+    <h1>You are LogOut..!</h1>
+</ng-template>
+<hr>
+<h1> *ngFor Example </h1>
+<ol>
+    <li *ngFor="let l of fruits; even as i">
+        {{l}}
+        <span *ngIf="i">"even"</span>
+    </li>
+    
+</ol>
+<button (click)="onAdd()">add</button>
+<ul>
+    <li *ngFor="let l of studentArr">
+        {{l.name}}
+        <button (click)="onRemove()">remove</button>
+
+    </li>
+</ul>
+<hr>
+<h1> *ngSwitch example </h1>
+<ul [ngSwitch]="logInName">
+    <li *ngSwitchCase="'user'">
+        <h4>user is login...!</h4>
+    </li>
+    <li *ngSwitchCase="'admin'">
+        <h4>admin is login...!</h4>
+    </li>
+    <li *ngSwitchDefault>
+        <h4>please choose login name</h4>
+    </li>
+</ul>
+
+<button (click)="port = 'map'">Map view</button>
+<button (click)="port = 'list'">List view</button>
+<div [ngSwitch]="port">
+    <div *ngSwitchCase="'map'">map is selected</div>
+    <div *ngSwitchCase="'list'">list is selected</div>
+    <div *ngSwitchDefault>Default case</div>
+</div>
+
+<hr>

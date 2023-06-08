@@ -1,0 +1,14 @@
+.div{
+    display: flex;
+    margin: 5px;
+}
+.name{
+    width: 80%;
+    padding: 10px 30px;
+    background-color: antiquewhite;
+}
+.status{
+    width: 40%;
+    padding: 10px 30px;
+    background-color: #d2cabf;
+}

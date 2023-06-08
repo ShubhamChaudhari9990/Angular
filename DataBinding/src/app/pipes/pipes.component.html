@@ -1,0 +1,6 @@
+<div>
+    <h3>Enter the $ amount</h3>
+    <input type="text" [(ngModel)]="amt" (ngModelChange)="convert()"><br><br>
+    <!-- <h1>{{total | currency:'INR'}}</h1> -->
+</div>
+<h1>{{amt | customPipes:82.86}}</h1>

@@ -1,0 +1,13 @@
+.form{
+    text-align: center;
+}
+#name,#status,#button{
+    width: 220px;
+    height: 30px;
+    font-size: large;
+    padding: 2px 30px;
+    border: none;
+    margin: 5px 0px;
+    text-align: center;
+    background-color: aliceblue;
+}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servies/auth.service';
 
@@ -17,6 +16,10 @@ export class LoginComponent {
   constructor(private auth : AuthService,private router : Router) { }
 
   ngOnInit(): void {
+    const isLoggedIn = localStorage.getItem('authToken') ? true : false
+    if (isLoggedIn) {
+      this.router.navigate(['dashboard'])
+    }
   }
 
   login() {
@@ -33,9 +36,10 @@ export class LoginComponent {
 
     this.auth.login(this.email,this.password).then(res => {
       if (res.user?.emailVerified == true) {
+
         localStorage.setItem('authToken', 'true');
         // sessionStorage.setItem(this.email,this.password);
-        alert("Login Successfully")
+        // alert("Login Successfully")
         this.router.navigate(['/dashboard']);
       }
       else {

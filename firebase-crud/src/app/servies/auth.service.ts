@@ -15,22 +15,12 @@ export class AuthService {
   private authTokenKey = 'authToken';
 
   constructor(private afu: AngularFireAuth, private router: Router) {
-    const isAuthenticated = this.isAuthenticated();
+    // const isAuthenticated = this.isAuthenticated();
   }
 
   //  Authenticated
   isAuthenticated(): boolean {
     return !!localStorage.getItem(this.authTokenKey);
-  }
-
-  getCurrentUser(): Promise<firebase.default.User | null> {
-    return new Promise((resolve, reject) => {
-      this.afu.onAuthStateChanged((user) => {
-        resolve(user);
-      }, (error) => {
-        reject(error);
-      });
-    });
   }
 
   //  login 

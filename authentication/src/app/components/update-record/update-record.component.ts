@@ -18,7 +18,6 @@ export class UpdateRecordComponent implements OnInit {
 
   constructor(private matDailogRef: MatDialogRef<UpdateRecordComponent>,@Inject(MAT_DIALOG_DATA) public data: any) { 
     const name=data.row.name;
-    console.log(name);
   }
 
   public productForm: FormGroup = new FormGroup({

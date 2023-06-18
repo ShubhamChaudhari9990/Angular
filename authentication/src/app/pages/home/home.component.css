@@ -1,7 +1,11 @@
-.btn{
-    background-color: red;
-    color: red;
-}
-mat-form-field{
+.mat-mdc-form-field,table{
     width: 100%;
+}
+.conatainer{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+    color: cornflowerblue;
 }

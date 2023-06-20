@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
+Authentication is used to a main login window of any application and website.
+  -  In authentication I have used firebase authentication.
+  -  I have create Gmail,Phone Number,Email,Github authentication.
+  -  And after user can login then display user data in mainmenu.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

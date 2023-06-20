@@ -1,0 +1,26 @@
+<h1>Add Records</h1>
+
+<form (submit)="submit()">
+    <input type="number" [(ngModel)]="id" name="id" placeholder="ID" >
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Name">
+    <input type="text" [(ngModel)]="address" name="address" placeholder="Address">
+    <button type="submit">submit</button>
+</form>
+
+<hr>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let u of data">
+        <td>{{u.id}}</td>
+        <td #cellName contenteditable="true">{{u.name}}</td>
+        <td #cellAddress contenteditable="true">{{u.address}}</td>
+        <td><button (click)="updateData(u.id,cellName.innerText,cellAddress.innerText)">Update</button> |
+            <button (click)="deleteData(u.id)">Delete</button>
+        </td>
+    </tr>
+</table>

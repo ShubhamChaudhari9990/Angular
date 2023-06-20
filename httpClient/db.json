@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "name": "yogi",
+      "address": "UP",
+      "id": 5
+    },
+    {
+      "name": "ajay",
+      "address": "pune",
+      "id": 7
+    },
+    {
+      "id": 1,
+      "name": "shubham",
+      "address": "pune"
+    },
+    {
+      "id": 2,
+      "name": "amol",
+      "address": "pune"
+    },
+    {
+      "id": 6,
+      "name": "kohli",
+      "address": "banglore"
+    },
+    {
+      "name": "Dhoni",
+      "address": "TS",
+      "id": 8
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

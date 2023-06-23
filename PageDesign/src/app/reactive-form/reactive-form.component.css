@@ -1,0 +1,46 @@
+/* Remove default outline for form fields */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  outline: none;
+}
+
+/* Add border for valid and invalid states */
+.border-left-danger {
+  border-left: 3px solid red;
+}
+
+.border-left-primary {
+  border-left: 3px solid blue;
+}
+.red {
+  color: red;
+  font-size: 8px;
+  padding-bottom: 17px;
+}
+input:disabled{
+  background-color: #e9e5e5 !important;
+}
+
+button{
+  color: #fff;
+  border-color: #004943;
+  padding: 3px 20px;
+  background: #004943;
+  font-size: 15px!important;
+}
+button:hover {
+  background-color: white;
+  color: 004943;
+}
+
+button:hover i,
+button:hover span{
+  background-color: white !important;
+  border-color: #004943 !important;
+  color: #004943 !important;
+}
+.submit:disabled{
+  background-color: gray;
+  pointer-events: none;
+}

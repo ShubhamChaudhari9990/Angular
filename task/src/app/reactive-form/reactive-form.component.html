@@ -1,0 +1,124 @@
+<div class="d-flex flex-column align-items-center flex-wrap" style="background: #f4f4f4">
+    <div class="row d-flex align-items-center w-100">
+        <div class="m-2 px-4 py-3 bg-white" style="color: #005aa9">
+            <span class="fs-6 fw-bold">MY ACCOUNT</span>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center w-100 p-2">
+        <div class="m-2 p-4 bg-white">
+            <div class="row d-flex align-items-center w-100">
+                <div class="d-flex m-3">
+                    <div class="p-2 m-2 fw-bold border-0 text-white"
+                        style="background: #004943; padding: 8px 30px !important; border-radius: 2px;">
+                        <i class="fa fa-user m-1 $font-size-base"></i> User Profile
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-center p-4">
+                    <form [formGroup]="myForm" (ngSubmit)="submitForm()" style="width: 800px">
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="firstName">First Name</label>
+                                <i class="fa fa-asterisk m-2 red" aria-hidden="true"></i>
+                            </div>
+                            <input type="text" id="firstName" formControlName="firstName" class="w-75 ml-2 form-control"
+                                [ngClass]="{
+                  'border-left-danger': isInvalidAndTouched('firstName')
+                }" (focus)="markAsUntouched('firstName')" (keypress)="onKeyPress($event)" />
+                        </div>
+
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="middleName">Middle Name</label>
+                            </div>
+                            <input type="text" id="middleName" formControlName="middleName"
+                                class="w-75 ml-2 form-control" (keypress)="onKeyPress($event)" />
+                        </div>
+
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="surname">Surname</label>
+                                <i class="fa fa-asterisk m-2 red" aria-hidden="true"></i>
+                            </div>
+                            <input type="text" id="surname" formControlName="surname" class="w-75 ml-2 form-control"
+                                [ngClass]="{
+                  'border-left-danger': isInvalidAndTouched('surname')
+                }" (focus)="markAsUntouched('surname')" (keypress)="onKeyPress($event)" />
+                        </div>
+
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="mobileNumber">Mobile Number</label>
+                                <i class="fa fa-asterisk m-2 red" aria-hidden="true"></i>
+                            </div>
+                            <input type="text" id="mobileNumber" formControlName="mobileNumber"
+                                class="w-75 ml-2 form-control" [ngClass]="{
+                  'border-left-danger': isInvalidAndTouched('mobileNumber')
+                }" (focus)="markAsUntouched('mobileNumber')" (input)="blockExtraDigits($event)"
+                                (keypress)="onKeyPressOnlyNumbers($event)" (keydown)="onKeyDown($event)" />
+                        </div>
+
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="email">Email Id</label>
+                                <i class="fa fa-asterisk m-2 red" aria-hidden="true"></i>
+                            </div>
+                            <input type="email" id="email" formControlName="email" class="w-75 ml-2 form-control"
+                                [ngClass]="{
+                  'border-left-danger': isInvalidAndTouched('email')
+                }" (focus)="markAsUntouched('email')" />
+                        </div>
+
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="backupEmail">Notification Email Id</label>
+                                <i class="fa fa-asterisk m-2 red" aria-hidden="true"></i>
+                            </div>
+                            <input type="email" id="backupEmail" formControlName="backupEmail"
+                                class="w-75 ml-2 form-control" [ngClass]="{
+                  'border-left-danger': isInvalidAndTouched('backupEmail')
+                }" (focus)="markAsUntouched('backupEmail')" />
+                        </div>
+
+                        <div class="d-flex col-md my-4 justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <label for="aadharno">Aadhaar Card No.</label>
+                            </div>
+                            <input type="text" id="aadharno" formControlName="aadharno" class="w-75 ml-2 form-control"
+                                (input)="blockExtraAadharDigit($event)" (keypress)="onKeyPressOnlyNumbers($event)"
+                                (keydown)="onKeyDown($event)" />
+                        </div>
+                        <div class="position-relative" style="margin-left: 25%; color: #005aa9">
+                            <div *ngIf="!editMode">
+                                <button class="p-1 px-2 ml-2 border-1" style="width: 100px;" type="button"
+                                    (click)="backForm()">
+                                    <i class="ico fa fa-arrow-left m-1" style="color: white"></i>
+                                    <span class="fw-bold" style="color: white">BACK</span>
+                                </button>
+                                <button class="p-1 px-2 ml-2 border-1" style="width: 100px;" type="button"
+                                    (click)="editForm()">
+                                    <i class="ico fa fa-pencil-square m-1" style="color: white"></i>
+                                    <span class="fw-bold" style="color: white">EDIT</span>
+                                </button>
+                            </div>
+                            <div *ngIf="editMode">
+                                <button class="p-1 px-2 ml-2 border-1" style="width: 100px;" type="button"
+                                    (click)="cancelForm()">
+                                    <i class="ico fa fa-times m-1" style="color: white"></i>
+                                    <span class="fw-bold" style="color: white">CANCEL</span>
+                                </button>
+
+                                <button class="submit p-1 px-2 ml-2 border-1" style="width: 100px;" type="submit"
+                                    [disabled]="myForm.invalid">
+                                    <i class="ico fa fa-pencil-square m-1" style="color: white"></i>
+                                    <span class="fw-bold" style="color: white">SUBMIT</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

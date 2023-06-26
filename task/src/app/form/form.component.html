@@ -1,0 +1,30 @@
+<form [formGroup]="myForm">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+        <div *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched" class="error">
+
+            Name is required.
+        </div>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+        <div *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched" class="error">
+            Please enter a valid email.
+        </div>
+    </div>
+
+    <div class="buttons">
+        <ng-container *ngIf="!editMode">
+            <button type="button" (click)="editForm()">Edit</button>
+            <button type="button" (click)="goBack()">Back</button>
+        </ng-container>
+        <ng-container *ngIf="editMode">
+            <button type="submit">Submit</button>
+            <button type="button" (click)="cancelForm()">Cancel</button>
+        </ng-container>
+        
+    </div>
+</form>

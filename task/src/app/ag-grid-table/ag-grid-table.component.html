@@ -1,0 +1,11 @@
+<button type="button" (click)="clear()">Clear</button>
+<ag-grid-angular
+    class="ag-theme-alpine-dark"
+    style="height: 500px; width: 600px;"
+    [rowData]="rowData$ | async"
+    [columnDefs]="columnDef"
+    [defaultColDef]="defaultColDef"
+    [animateRows]="true"
+    [rowSelection]="'multiple'"
+  >
+</ag-grid-angular>

@@ -17,8 +17,6 @@ export class UpdateRecordComponent implements OnInit {
   }
 
   constructor(private matDailogRef: MatDialogRef<UpdateRecordComponent>,@Inject(MAT_DIALOG_DATA) public data: any) { 
-    const name=data.row.name;
-    console.log(name);
   }
 
   public productForm: FormGroup = new FormGroup({
@@ -29,6 +27,7 @@ export class UpdateRecordComponent implements OnInit {
 
   ngOnInit(): void {
     // this.productForm.get('name').patchValue(this.data.row.name);
+    this.productForm.patchValue(this.data.row.name)    
   }
   
   onSubmit() {

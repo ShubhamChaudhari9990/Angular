@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "name": "yogi",
-      "address": "UP",
-      "id": 5
-    },
-    {
       "name": "ajay",
       "address": "pune",
       "id": 7
@@ -29,6 +24,16 @@
       "name": "Dhoni",
       "address": "TS",
       "id": 8
+    },
+    {
+      "name": "Ranji Pawar",
+      "address": "Shirbhavi",
+      "id": 3
+    },
+    {
+      "id": 9,
+      "name": "wefgv",
+      "address": "werf"
     }
   ],
   "comments": [],

@@ -25,7 +25,7 @@ export class AgGridTableComponent {
   public rowData$ : Observable<any[]>;
 
   columnDef : any[] = [
-    { field : 'make', cellRenderer : MycomponentComponent },
+    { field : 'make', cellRenderer : MycomponentComponent, rowGroup : true },
     { field : 'model' },
     { field : 'price' }
   ];

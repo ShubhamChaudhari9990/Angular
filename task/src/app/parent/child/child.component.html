@@ -1,2 +1,6 @@
 <p>child works!</p>
-<p>Recevied from parent <b>{{parent}}</b></p>
+<p>Recevied from parent component <b>{{parentName}}</b></p>
+
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewName(newItem.value)">Add to parent's list</button>

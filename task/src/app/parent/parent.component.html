@@ -1,3 +1,11 @@
-<h1>
-    <app-child [parent]="parent"></app-child>
-</h1>
+<div class="container">
+    <button (click)="showChild()">Parent to Child</button>
+    <h4 *ngIf="toggleChild">
+        <app-child [parentName]="name"  (name)="addItem($event)">
+        </app-child>
+    </h4>
+    <button (click)="showParent()">Child to Parent</button>
+    <ul *ngIf="toggleParent">
+        <li *ngFor="let names of nameList">{{names}}</li>
+    </ul>
+</div>

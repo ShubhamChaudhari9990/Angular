@@ -7,6 +7,22 @@ import { Component } from '@angular/core';
 })
 export class ParentComponent {
 
-  parent = "Shubham";
+  toggleChild = false
+  toggleParent = false
+
+  name = "Shubham";
+
+  nameList = ['amol','shubham'];
+  addItem(name: string){
+    this.nameList.push(name);
+  }
+
+  showChild(){
+    this.toggleChild = !this.toggleChild
+  }
+
+  showParent(){
+    this.toggleParent = !this.toggleParent
+  }
 
 }

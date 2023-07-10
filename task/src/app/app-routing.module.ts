@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DribbleComponent } from './dribble/dribble.component';
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   { path : '' , redirectTo : 'dribble', pathMatch : 'full'},
-  { path : 'dribble', component : DribbleComponent}
+  { path : 'dribble', component : DribbleComponent},
+  { path: 'parent', component: ParentComponent}
 ];
 
 @NgModule({

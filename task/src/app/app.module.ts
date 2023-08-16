@@ -13,7 +13,10 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AgGridTableComponent } from './ag-grid-table/ag-grid-table.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { MycomponentComponent } from './ag-grid-table/mycomponent/mycomponent.component'
+import { MycomponentComponent } from './ag-grid-table/mycomponent/mycomponent.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './parent/child/child.component';
+import { RollbarComponent } from './rollbar/rollbar.component'
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { MycomponentComponent } from './ag-grid-table/mycomponent/mycomponent.co
     FormComponent,
     ReactiveFormComponent,
     AgGridTableComponent,
-    MycomponentComponent
+    MycomponentComponent,
+    ParentComponent,
+    ChildComponent,
+    RollbarComponent
   ],
   imports: [
     BrowserModule,

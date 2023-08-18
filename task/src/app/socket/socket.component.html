@@ -1,0 +1,13 @@
+<p>socket works!</p>
+<div>
+    <h2>Socket Chat</h2>
+    <div>
+        <ul  *ngFor="let message of messages">
+            {{message.id}}
+            {{message.text}}
+            {{message.timestamp}}
+        </ul>
+    </div>
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+</div>
